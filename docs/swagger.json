@@ -1,0 +1,117 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "A test sample for tutorial golang",
+        "title": "Crm crud project",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "paths": {
+        "/post": {
+            "get": {
+                "description": "this method can get all post",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Get all post"
+                ],
+                "summary": "Get all posts",
+                "responses": {}
+            },
+            "post": {
+                "description": "this method can create a new post",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Create a new post",
+                "parameters": [
+                    {
+                        "description": "Create post",
+                        "name": "post",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PostRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/post/:id": {
+            "delete": {
+                "description": "this method can delete a post",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Delete a post",
+                "responses": {}
+            },
+            "patch": {
+                "description": "this method can update a post",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Update a post",
+                "parameters": [
+                    {
+                        "description": "Update post",
+                        "name": "post",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PostRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/post/id": {
+            "get": {
+                "description": "this method can get post by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Get all post"
+                ],
+                "summary": "Get post by id",
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "models.PostRequest": {
+            "type": "object",
+            "required": [
+                "Body",
+                "Title"
+            ],
+            "properties": {
+                "Body": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "minLength": 64
+                },
+                "Title": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "minLength": 4
+                }
+            }
+        }
+    }
+}
